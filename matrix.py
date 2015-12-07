@@ -27,4 +27,27 @@ class Matrix:
                     if self.value[i][j]!=other.value[i][j]:
                         return False
             return True
-    
+    def get(self, i, j):
+        if i <= self.m and j <= self.n:
+            raise Exception(ValueError)
+        else:
+            return self.A[i][j]
+
+    def get_m(self):
+        return self.m
+
+    def get_n(self):
+        return self.n
+
+    def get_size(self):
+        return self.m, self.n
+
+    def set(self,i,j,value):
+        self.A[i][j]=value
+
+    def __sub__(self, other):
+        result=Matrix(self.get_m(),self.get_n())
+        for i in range(self.m):
+            for j in range(self.n):
+                result.X[i][j] = (self.get(i,j)-other.get(i,j))
+        return result
