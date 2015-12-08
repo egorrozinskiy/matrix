@@ -24,7 +24,7 @@ class Matrix:
         else:
             for i in range(self.n):
                 for j in range(self.m):
-                    if self.value[i][j]!=other.value[i][j]:
+                    if self.A[i][j]!=other.A[i][j]:
                         return False
             return True
     def get(self, i, j):
