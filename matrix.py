@@ -64,4 +64,6 @@ class Matrix:
                 result.X[i][j] = (self.get(i,j)-other.get(i,j))
         return result
 
-    
+    def __truediv__(self, other):
+        result = self * (1/other)
+        return result
